@@ -8,7 +8,7 @@ on:
         required: true
 
 jobs:
-  trigger-other:
+  printing-name:
     runs-on: ubuntu-latest
     steps:
       - name: Trigger Github-Actions workflow

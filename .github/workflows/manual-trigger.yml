@@ -19,5 +19,5 @@ jobs:
           event-type: trigger-manual
           client-payload: |
             {
-              "username": "${{ github.event.inputs.name }}"
+              "username": "${{ github.event.inputs.username }}"
             }

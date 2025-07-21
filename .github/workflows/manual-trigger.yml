@@ -1,0 +1,23 @@
+name: Trigger External Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Name to greet'
+        required: true
+
+jobs:
+  trigger-other:
+    runs-on: windows-latest
+    steps:
+      - name: Trigger Github-Actions workflow
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          repository: Kishore-Anbu/Github-Actions
+          event-type: trigger-manual
+          client-payload: |
+            {
+              "name": "${{ github.event.inputs.name }}"
+            }

@@ -1,0 +1,20 @@
+name: Greeting Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      user_name:
+        description: "Name of the user"
+        required: true
+
+jobs:
+  greet:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Call Greeting Action
+        uses: Kishore-Anbu/Github-Actions@main
+        with:
+          name: ${{ github.event.inputs.user_name }}

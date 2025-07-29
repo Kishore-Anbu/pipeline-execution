@@ -1,0 +1,25 @@
+name: Test NuGet Composite Action
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # Allows manual triggering of the workflow
+
+jobs:
+  test-nuget-action:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Step 2: Use the Composite Action
+      - name: Run NuGet Composite Action
+        uses: Kishore-Anbu/Github-Actions/.github/actions/nuget-composite-action@main
+        with:
+          taskType: 'restore' # Specify the task type (command, installer, restore)
+          solution: '**/*.sln' # Path to solution or packages.config
+          verbosity: 'Detailed' # Verbosity level
+          selectOrConfig: 'select' # Feeds to use (select or config)

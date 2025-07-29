@@ -17,7 +17,7 @@ jobs:
 
       # Step 2: Use the Composite Action
       - name: Run NuGet Composite Action
-        uses: Kishore-Anbu/Github-Actions/.github/actions/nuget-composite-action@main
+        uses: Kishore-Anbu/Github-Actions/.github/actions/NuGet Composite Action/nuget-composite-action@main
         with:
           taskType: 'restore' # Specify the task type (command, installer, restore)
           solution: '**/*.sln' # Path to solution or packages.config

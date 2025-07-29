@@ -15,6 +15,10 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
+      # Step 2: Verify nuget version
+      - name: Verify NuGet Version
+        run: nuget --version
+
       # Step 2: Use the Composite Action
       - name: Run NuGet Composite Action
         uses: Kishore-Anbu/Github-Actions/.github/actions/nuget-composite-action@main
@@ -23,3 +27,6 @@ jobs:
           solution: '**/*.sln' # Path to solution or packages.config
           verbosity: 'Detailed' # Verbosity level
           selectOrConfig: 'select' # Feeds to use (select or config)
+          feed: 'https://api.nuget.org/v3/index.json' # Required if selectOrConfig is 'select'
+          nugetConfigPath: './NuGet.config' # Required if selectOrConfig is 'config'
+          nuGetVersion: '5.9.0' # Specify the NuGet version

@@ -15,16 +15,16 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
+      # Step 2: Install NuGet
       - name: Install NuGet
         run: |
           curl -L -o nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
-          mv nuget.exe /usr/local/bin/nuget
 
-      # Step 2: Verify nuget version
+      # Step 3: Verify NuGet Version
       - name: Verify NuGet Version
-        run: nuget --version
+        run: .\nuget.exe help
 
-      # Step 2: Use the Composite Action
+      # Step 4: Use the Composite Action
       - name: Run NuGet Composite Action
         uses: Kishore-Anbu/Github-Actions/.github/actions/nuget-composite-action@main
         with:

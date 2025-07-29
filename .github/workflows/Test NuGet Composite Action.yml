@@ -31,7 +31,7 @@ jobs:
           taskType: 'restore' # Specify the task type (command, installer, restore)
           solution: '**/*.sln' # Path to solution or packages.config
           verbosity: 'Detailed' # Verbosity level
-          selectOrConfig: 'select' # Feeds to use (select or config)
-          feed: 'https://api.nuget.org/v3/index.json' # Required if selectOrConfig is 'select'
+          #selectOrConfig: 'select' # Feeds to use (select or config)
+          #feed: 'https://api.nuget.org/v3/index.json' # Required if selectOrConfig is 'select'
           nugetConfigPath: './NuGet.config' # Required if selectOrConfig is 'config'
           nuGetVersion: '3.0.0' # Specify the NuGet version

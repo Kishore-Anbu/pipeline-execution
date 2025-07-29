@@ -29,4 +29,4 @@ jobs:
           selectOrConfig: 'select' # Feeds to use (select or config)
           feed: 'https://api.nuget.org/v3/index.json' # Required if selectOrConfig is 'select'
           nugetConfigPath: './NuGet.config' # Required if selectOrConfig is 'config'
-          nuGetVersion: '5.9.0' # Specify the NuGet version
+          nuGetVersion: '3.0.0' # Specify the NuGet version
